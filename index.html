@@ -66,7 +66,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section (avec votre photo en arrière-plan) -->
+    <!-- Hero Section -->
     <header class="relative min-h-screen bg-[url('photo-assis.JPG')] bg-cover bg-center flex items-center justify-center pt-20 px-6 overflow-hidden">
         <!-- Filtre vert nuit pour harmoniser la photo avec le reste du site -->
         <div class="absolute inset-0 bg-linaria-dark/75 pointer-events-none"></div>
@@ -83,16 +83,13 @@
                 La linotte mélodieuse est un petit oiseau vif au chant riche et varié. Charmé·es par son nom évocateur et joyeux, nous lui avons emprunté sa version latine, Linaria.
             </p>
             
-            <!-- Bouton Audio harmonisé (sans cadre blanc) -->
+            <!-- Bouton Audio -->
             <div class="pt-2 flex flex-col items-center justify-center">
-                <div onclick="jouerAudio('audio-linotte')" class="relative inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-linaria-card/80 border border-linaria-gold/40 cursor-pointer group hover:border-linaria-gold transition-all shadow-lg">
-                    <div class="relative">
-                        <img src="audio.png" alt="Écouter la Linotte" class="w-10 h-10 object-contain group-hover:opacity-75 transition duration-300">
-                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                            <i class="fa-solid fa-circle-play text-linaria-gold text-xl drop-shadow-md"></i>
-                        </div>
+                <div onclick="jouerAudio('audio-linotte')" class="relative inline-block cursor-pointer group">
+                    <img src="audio.png" alt="Écouter la Linotte" class="w-16 h-16 drop-shadow-lg group-hover:opacity-75 transition duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <i class="fa-solid fa-circle-play text-white text-5xl opacity-80 drop-shadow-md"></i>
                     </div>
-                    <span class="text-sm text-stone-200 group-hover:text-linaria-goldLight transition-colors pr-2">Écouter le chant de la linotte</span>
                 </div>
                 <audio id="audio-linotte" src="linotte-melodieuse.mp3"></audio>
             </div>
@@ -112,170 +109,156 @@
         </div>
     </header>
 
-    <!-- Section: À Propos / Le Quintette -->
-    <section id="about" class="py-28 px-6 bg-linaria-dark border-t border-linaria-border/30">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
-                    Qui sommes nous ?
-                </h2>
-                <p class="text-stone-300 leading-relaxed font-light">
-                    Formé en 2022 au Conservatoire National Supérieur de Musique de Paris, le Quintette Linaria réunit cinq jeunes musiciens actuellement en cursus de licence dans la discipline du quintette à vent. Ils se sont réunis après avoir fait partie de l’orchestre français des jeunes (OFJ) pendant l’été 2021. 
-                </p>
-                <p class="text-stone-300 leading-relaxed font-light">
-                    Sous les conseils de leurs professeurs Jérémie Dufort et Jean-Christophe Vervoitte, le groupe explore un répertoire riche et varié, mêlant œuvres originales et transcriptions adaptées à cette formation.
-                </p>
-                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-linaria-border/40">
-                    <div>
-                        <span class="block font-serif text-3xl font-bold text-linaria-gold">5</span>
-                        <span class="text-sm text-stone-400">Musiciens d'exception</span>
-                    </div>
-                    <div>
-                        <span class="block font-serif text-3xl font-bold text-linaria-gold">1h</span>
-                        <span class="text-sm text-stone-400">De programmes immersifs</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Bloc visuel / Les instrumentistes -->
-            <div class="relative rounded-2xl overflow-hidden bg-linaria-card border border-linaria-border/50 p-8 flex flex-col justify-between shadow-2xl min-h-[400px]">
-                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,175,55,0.12),transparent_60%)]"></div>
-                <div class="relative z-10 space-y-4">
-                    <span class="text-linaria-gold text-xs font-mono uppercase tracking-wider">Formation</span>
-                    <h3 class="font-serif text-2xl text-white font-semibold">Les instrumentistes</h3>
-                </div>
-                <div class="relative z-10 space-y-3 my-8 text-stone-200">
-                    <div class="flex items-center justify-between border-b border-linaria-border/40 pb-2"><span>Flûte</span> <span class="text-linaria-goldLight font-light">Camille Dupont-Bouyer</span></div>
-                    <div class="flex items-center justify-between border-b border-linaria-border/40 pb-2"><span>Hautbois</span> <span class="text-linaria-goldLight font-light">Thibaud Rezzouk</span></div>
-                    <div class="flex items-center justify-between border-b border-linaria-border/40 pb-2"><span>Clarinette</span> <span class="text-linaria-goldLight font-light">Nina Reynaud</span></div>
-                    <div class="flex items-center justify-between border-b border-linaria-border/40 pb-2"><span>Cor</span> <span class="text-linaria-goldLight font-light">Zoya Catta</span></div>
-                    <div class="flex items-center justify-between pb-2"><span>Basson</span> <span class="text-linaria-goldLight font-light">Raphaëlle Rouxel</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SectionTransition Visuelle (Mosaïque) -->
+    <!-- Nouvelle section avec image de fond -->
     <section class="relative bg-[url('mosaique.jpg')] bg-cover bg-center bg-fixed py-24 border-y border-linaria-border/30">
         <div class="absolute inset-0 bg-linaria-dark/70"></div>
-        <div class="relative z-10 max-w-3xl mx-auto text-center px-6">
-            <p class="font-serif italic text-2xl md:text-3xl text-linaria-goldLight">
-                « La richesse des timbres du quintette à vent, entre chaleur boisée et éclat cuivré. »
-            </p>
+    </section>
+
+    <!-- Section: Présentation & Biographies -->
+    <section id="about" class="py-28 px-6 bg-linaria-dark border-t border-linaria-border/30">
+        <div class="max-w-6xl mx-auto space-y-20">
+            
+            <!-- Présentation du Quintette -->
+            <div class="max-w-3xl mx-auto space-y-6 text-center md:text-left">
+                <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold block text-center">Présentation</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white leading-tight text-center">
+                    Le Quintette Linaria
+                </h2>
+                <div class="space-y-5 text-stone-300 leading-relaxed font-light pt-4">
+                    <p>
+                        La linotte mélodieuse est un petit oiseau vif au chant riche et varié. Charmé·es par son nom évocateur et joyeux, nous lui avons emprunté sa version latine, Linaria.
+                    </p>
+                    <p>
+                        Notre ensemble a vu le jour en 2023 dans les murs du CNSMD de Paris, suite à notre rencontre à l’Orchestre Français des Jeunes deux ans plus tôt. Tous diplômé·es de cet établissement dans nos instruments respectifs, nous avons également obtenu en quintette un DNSPM de musique de chambre en 2025.
+                    </p>
+                    <p>
+                        Fervent défenseur du répertoire des XXe et XXIe siècles, notre ensemble à vent aime tout autant jouer ce répertoire existant que rencontrer et travailler avec des compositeurs et compositrices actuels. En 2025, nous avons eu le plaisir de collaborer avec Lucien Lacquement à la création de sa pièce <em>La planète sauvage</em>, inspirée du film de René Laloux.
+                    </p>
+                    <p>
+                        Nous avons à cœur de rendre cette musique accessible au plus grand nombre, qu’il s’agisse de mélomanes avertis, d’une audience moins initiée ou de publics scolaires. Nous proposons d’accompagner nos concerts d’actions de médiation culturelle lorsque cela est possible.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Biographies des membres -->
+            <div class="space-y-12 pt-8 border-t border-linaria-border/40">
+                <div class="text-center space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Biographies</span>
+                    <h3 class="font-serif text-3xl md:text-4xl font-bold text-white">Des membres du quintette</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Camille Dupont-Bouyer -->
+                    <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-6 space-y-4 shadow-xl">
+                        <div class="border-b border-linaria-border/40 pb-3">
+                            <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Flûte</span>
+                            <h4 class="font-serif text-xl font-bold text-white mt-1">Camille Dupont-Bouyer</h4>
+                        </div>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed">
+                            Camille commence son parcours musical au piano, avant de trouver sa véritable voie dans la flûte traversière. C’est sa passion pour le jeu en ensemble et la richesse des échanges humains qui l’ont naturellement poussé à se consacrer pleinement à cet instrument. Il occupe actuellement le poste de deuxième flûte et piccolo au sein de l'Orchestre de la Garde républicaine.
+                        </p>
+                    </div>
+
+                    <!-- Thibaud Rezzouk -->
+                    <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-6 space-y-4 shadow-xl">
+                        <div class="border-b border-linaria-border/40 pb-3">
+                            <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Hautbois</span>
+                            <h4 class="font-serif text-xl font-bold text-white mt-1">Thibaud Rezzouk</h4>
+                        </div>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed">
+                            Hautboïste ouvert et curieux, Thibaud Rezzouk aime explorer toute la palette sonore de son instrument, du répertoire baroque aux créations contemporaines qui lui permettent d’exploiter de nombreux modes de jeu. Ses expériences au sein d’institutions telles que l’Orchestre National Auvergne Rhône-Alpe ou l’Ensemble Intercontemporain l’inspirent dans son engagement avec le quintette Linaria.
+                        </p>
+                    </div>
+
+                    <!-- Nina Reynaud -->
+                    <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-6 space-y-4 shadow-xl">
+                        <div class="border-b border-linaria-border/40 pb-3">
+                            <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Clarinette</span>
+                            <h4 class="font-serif text-xl font-bold text-white mt-1">Nina Reynaud</h4>
+                        </div>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed">
+                            Originaire de l’Orléanais, Nina joue ses premières notes de clarinette dans l’orchestre d’harmonie de son village. Quelques années plus tard, c’est donc tout naturellement que lui vient l’envie de rejoindre les rangs de l’orchestre d’harmonie de la Garde républicaine, puis de former un quintette à vent : Linaria. Elle a récemment intégré l’Orchestre de chambre de Paris en tant que clarinette co-soliste.
+                        </p>
+                    </div>
+
+                    <!-- Zoya Catta -->
+                    <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-6 space-y-4 shadow-xl">
+                        <div class="border-b border-linaria-border/40 pb-3">
+                            <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Cor</span>
+                            <h4 class="font-serif text-xl font-bold text-white mt-1">Zoya Catta</h4>
+                        </div>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed">
+                            Zoya découvre le cor à l'âge de 8 ans et déclare qu'elle sera corniste ! Depuis, elle n'a de cesse de se nourrir de toutes les possibilités de son instrument, du baroque à la musique moderne, ainsi que des différentes formations que lui offre sa carrière de corniste. En parallèle de sa vie de chambriste, Zoya se produit régulièrement dans de nombreux orchestres nationaux partout en France.
+                        </p>
+                    </div>
+
+                    <!-- Raphaëlle Rouxel -->
+                    <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-6 space-y-4 shadow-xl">
+                        <div class="border-b border-linaria-border/40 pb-3">
+                            <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Basson</span>
+                            <h4 class="font-serif text-xl font-bold text-white mt-1">Raphaëlle Rouxel</h4>
+                        </div>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed">
+                            Raphaëlle découvre la musique à l’âge de 10 ans, après avoir eu un coup de cœur pour le basson. Parallèlement à ses études de basson, elle s’est formée en pédagogie et en musique de chambre avant de rejoindre l’Orchestre National de Lille au poste de contrebasson solo. C’est dans l’équilibre entre l’orchestre, la musique de chambre et l’enseignement qu’elle trouve la richesse de son métier.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Section: Programmes de Concert (~1h) -->
-    <section id="programs" class="py-28 px-6 bg-linaria-card/40">
-        <div class="max-w-6xl mx-auto space-y-16">
+    <!-- Section: Programmes de Concert -->
+    <section id="programs" class="py-28 px-6 bg-linaria-card/40 border-t border-linaria-border/30">
+        <div class="max-w-5xl mx-auto space-y-16">
             <div class="text-center max-w-2xl mx-auto space-y-4">
-                <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Diffusion & Saison</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Nos Programmes</h2>
-                <p class="text-stone-300 font-light">
-                    Des formats d'environ 1 heure conçus sans entracte pour une immersion totale.
-                </p>
+                <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Durée : 1h environ</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Programmes</h2>
             </div>
 
             <!-- Grille des Programmes -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- Programme 1 -->
+                <!-- Programme 1 : À la loupe -->
                 <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-linaria-gold/15 text-linaria-goldLight">Environ 54 min</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-linaria-gold/15 text-linaria-goldLight">De Marais à Messiaen</span>
+                            <i class="fa-solid fa-magnifying-glass text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white">À la loupe</h3>
+                        <p class="text-stone-300 text-sm font-light leading-relaxed">
+                            Alternance de pièces solo et en quintette.
+                        </p>
+                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-sm text-stone-200 font-light">
+                            <p>Marais, Bach, Ibert, Carrapatoso, Messiaen, Berio et Sciarrino</p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
+                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
+                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programme 2 : Bagatelles -->
+                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-linaria-gold/15 text-linaria-goldLight">Quintette à vent</span>
                             <i class="fa-solid fa-music text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
                         </div>
                         <h3 class="font-serif text-2xl font-bold text-white">Bagatelles</h3>
-                        <p class="text-stone-300 text-sm font-light leading-relaxed">
-                            Un voyage plein d'esprit et de contrastes à travers les miniatures du XXe siècle, mêlant humour, danses populaires et lyrisme.
-                        </p>
                         <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">György LIGETI</strong> — Six Bagatelles</p>
-                            <p><strong class="text-white">Malcolm ARNOLD</strong> — Three Shanties</p>
-                            <p><strong class="text-white">Paul HINDEMITH</strong> — Kleine Kammermusik</p>
-                            <p><strong class="text-white">Fazil SAY</strong> — Alevi dedeler rakı masasında</p>
-                            <p><strong class="text-white">Eurico CARRAPATOSO</strong> — Cinco Elegias</p>
+                            <p><strong class="text-white">LIGETI</strong>, 6 Bagatelles</p>
+                            <p><strong class="text-white">ARNOLD</strong>, Three Shanties</p>
+                            <p><strong class="text-white">HINDEMITH</strong>, Kleine Kammermusik</p>
+                            <p><strong class="text-white">CARRAPATOSO</strong>, Cinco Elegias</p>
+                            <p><strong class="text-white">SAY</strong>, Alevi dedeler rakı masasında</p>
                         </div>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-between">
-                        <span class="text-xs text-stone-400 italic">Idéal tout public & festival</span>
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Programme 2 -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-linaria-gold/15 text-linaria-goldLight">Environ 58 min</span>
-                            <i class="fa-solid fa-wind text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">L'Âge d'Or du Quintette à Vent</h3>
-                        <p class="text-stone-300 text-sm font-light leading-relaxed">
-                            Les grands chefs-d'œuvre fondateurs qui ont consacré le quintette à vent comme une formation majeure de la musique de chambre.
-                        </p>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">Paul HINDEMITH</strong> — Kleine Kammermusik</p>
-                            <p><strong class="text-white">Jacques IBERT</strong> — Trois pièces brèves</p>
-                            <p><strong class="text-white">Samuel BARBER</strong> — Summer Music</p>
-                            <p><strong class="text-white">Carl NIELSEN</strong> — Quintette op. 43</p>
-                        </div>
-                    </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-between">
-                        <span class="text-xs text-stone-400 italic">Répertoire de référence</span>
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Programme 3 -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-linaria-gold/15 text-linaria-goldLight">Environ 56 min</span>
-                            <i class="fa-solid fa-palette text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">Élégance & Couleurs de France</h3>
-                        <p class="text-stone-300 text-sm font-light leading-relaxed">
-                            Un panorama de l'école française des vents, reconnue pour sa clarté, sa finesse et son esprit. Du romantisme fondateur de Taffanel à l'impressionnisme de Ravel, en passant par le vent de modernité d'Ibert.
-                        </p>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">Paul TAFFANEL</strong> — Quintette en sol mineur</p>
-                            <p><strong class="text-white">Maurice RAVEL</strong> — Le Tombeau de Couperin</p>
-                            <p><strong class="text-white">Jacques IBERT</strong> — Trois pièces brèves</p>
-                        </div>
-                    </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-between">
-                        <span class="text-xs text-stone-400 italic">Élégance & raffinement</span>
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Programme 4 -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-linaria-gold/15 text-linaria-goldLight">Environ 54 min</span>
-                            <i class="fa-solid fa-earth-americas text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">Rêves Américains</h3>
-                        <p class="text-stone-300 text-sm font-light leading-relaxed">
-                            Un fil rouge transatlantique entre l'humour britannique d'Arnold, la vitalité de la compositrice afro-américaine Valerie Coleman et la nostalgie ouatée de Samuel Barber.
-                        </p>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">Malcolm ARNOLD</strong> — Three Shanties</p>
-                            <p><strong class="text-white">Valerie COLEMAN</strong> — Tzigane</p>
-                            <p><strong class="text-white">Samuel BARBER</strong> — Summer Music</p>
-                            <p><strong class="text-white">Anton DVORAK</strong> — Quatuor Américain</p>
-                        </div>
-                    </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-between">
-                        <span class="text-xs text-stone-400 italic">Énergie & modernité</span>
+                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
                         <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
                             Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
@@ -297,7 +280,7 @@
                 </p>
             </div>
             
-            <!-- Conteneur Vidéo Responsive -->
+            <!-- Conteneur Vidéo Responsive (Intégration YouTube) -->
             <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-linaria-border/50 bg-linaria-card">
                 <iframe 
                     class="w-full h-full" 
@@ -317,14 +300,14 @@
 
     <!-- Section: Contact & Diffusion -->
     <section id="contact" class="py-28 px-6 bg-linaria-card/40 border-t border-linaria-border/30">
-        <div class="max-w-4xl mx-auto">
-            <div class="space-y-6 max-w-2xl">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
                 <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Booking & Relations</span>
                 <h2 class="font-serif text-4xl font-bold text-white">Contactez-nous</h2>
                 <p class="text-stone-300 font-light leading-relaxed">
                     Vous êtes programmateur, directeur de festival ou curieux de découvrir nos projets ? N'hésitez pas à nous écrire pour recevoir notre plaquette artistique et nos disponibilités pour la saison.
                 </p>
-                <div class="space-y-4 pt-4 text-stone-200">
+                <div class="space-y-4 pt-2 text-stone-200">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-linaria-card border border-linaria-border/60 flex items-center justify-center text-linaria-gold">
                             <i class="fa-solid fa-envelope"></i>
@@ -350,21 +333,17 @@
 
     <!-- Footer -->
     <footer class="py-12 px-6 bg-linaria-dark border-t border-linaria-border/40 text-center text-stone-400 text-sm space-y-4">
-        <div class="flex items-center justify-center space-x-6 text-xl">
-            <a href="https://www.youtube.com/@QuintetteLinaria" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition-colors">
-                <i class="fa-brands fa-youtube"></i>
+        <div class="flex items-center justify-center space-x-6 text-lg">
+            <a href="https://www.youtube.com/@QuintetteLinaria" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition duration-300"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/quintette.linaria/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition duration-300">
+                <i class="fa-brands fa-instagram text-3xl"></i>
             </a>
-            <a href="https://www.instagram.com/quintette.linaria/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition-colors">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/p/Quintette-Linaria-61585351946316/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition-colors">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
+            <a href="https://www.facebook.com/p/Quintette-Linaria-61585351946316/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition-colors"><i class="fa-brands fa-facebook"></i></a>
         </div>
         <p>© 2026 Quintette Linaria. Tous droits réservés. Association Loi 1901.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Script pour le menu mobile et l'audio -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
