@@ -67,12 +67,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-screen bg-[url('photo-assis.JPG')] bg-cover bg-center flex items-center justify-center pt-20 px-6 overflow-hidden">
-        <!-- Filtre vert nuit pour harmoniser la photo avec le reste du site -->
-        <div class="absolute inset-0 bg-linaria-dark/75 pointer-events-none"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12)_0,transparent_70%)] pointer-events-none"></div>
+    <header class="relative md:min-h-screen md:bg-[url('photo-assis.JPG')] md:bg-cover md:bg-center flex flex-col justify-center pt-24 pb-16 md:py-20 px-6 overflow-hidden">
+        <!-- Filtre vert nuit (uniquement sur ordinateur où la photo est en fond) -->
+        <div class="hidden md:block absolute inset-0 bg-linaria-dark/75 pointer-events-none"></div>
+        <div class="hidden md:block absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12)_0,transparent_70%)] pointer-events-none"></div>
 
-        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-8">
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+            
+            <!-- Photo complète visible uniquement sur mobile (les 5 musiciens en entier) -->
+            <div class="md:hidden rounded-2xl overflow-hidden border border-linaria-border/50 shadow-2xl mb-4">
+                <img src="photo-assis.JPG" alt="Quintette Linaria" class="w-full h-auto object-contain">
+            </div>
+
             <span class="inline-block px-4 py-1.5 rounded-full text-xs uppercase tracking-widest bg-linaria-gold/15 text-linaria-goldLight border border-linaria-gold/30 font-medium">
                 Quintette à vent
             </span>
