@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographies | Quintette Linaria</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        linaria: {
+                            dark: '#042411',
+                            card: '#083b1e',
+                            border: '#115e32',
+                            gold: '#d4af37',
+                            goldLight: '#f3d06b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome pour les icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #042411;
+            color: #f8fafc;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-linaria-dark text-stone-100 antialiased selection:bg-linaria-gold selection:text-linaria-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-linaria-dark/85 backdrop-blur-md border-b border-linaria-border/40 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-2xl tracking-wider text-linaria-gold font-bold flex items-center gap-2">
+                <i class="fa-solid fa-dove"></i> Quintette LINARIA
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html#about" class="hover:text-linaria-goldLight transition-colors">Le Quintette</a>
+                <a href="biographies.html" class="text-linaria-gold font-semibold">Biographies</a>
+                <a href="index.html#programs" class="hover:text-linaria-goldLight transition-colors">Programmes</a>
+                <a href="index.html#media" class="hover:text-linaria-goldLight transition-colors">Médias</a>
+                <a href="index.html#contact" class="px-4 py-2 rounded-full border border-linaria-gold/60 text-linaria-gold hover:bg-linaria-gold hover:text-linaria-dark transition-all">Contact & Diffusion</a>
+            </div>
+            <!-- Menu Mobile Bouton -->
+            <button id="menu-btn" class="md:hidden text-stone-200 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-linaria-card border-b border-linaria-border px-6 py-6 flex flex-col space-y-4">
+            <a href="index.html#about" class="mobile-link hover:text-linaria-goldLight text-lg">Le Quintette</a>
+            <a href="biographies.html" class="mobile-link text-linaria-gold text-lg font-semibold">Biographies</a>
+            <a href="index.html#programs" class="mobile-link hover:text-linaria-goldLight text-lg">Programmes</a>
+            <a href="index.html#media" class="mobile-link hover:text-linaria-goldLight text-lg">Médias</a>
+            <a href="index.html#contact" class="mobile-link text-linaria-gold text-lg font-semibold">Contact & Diffusion</a>
+        </div>
+    </nav>
+
+    <!-- Contenu principal : Biographies -->
+    <main class="pt-32 pb-28 px-6">
+        <div class="max-w-5xl mx-auto space-y-16">
+            
+            <!-- Lien retour + Titre -->
+            <div class="space-y-6">
+                <a href="index.html#about" class="inline-flex items-center gap-2 text-sm text-linaria-gold hover:text-linaria-goldLight transition-colors">
+                    <i class="fa-solid fa-arrow-left text-xs"></i> Retour à l'accueil
+                </a>
+                <div class="text-center space-y-3">
+                    <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Biographies</span>
+                    <h1 class="font-serif text-4xl md:text-5xl font-bold text-white">Des membres du quintette</h1>
+                </div>
+            </div>
+
+            <!-- Liste des Biographies -->
+            <div class="space-y-8">
+                
+                <!-- Camille Dupont-Bouyer -->
+                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 space-y-4 shadow-xl">
+                    <div class="border-b border-linaria-border/40 pb-3">
+                        <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Flûte</span>
+                        <h2 class="font-serif text-2xl font-bold text-white mt-1">Camille Dupont-Bouyer</h2>
+                    </div>
+                    <p class="text-stone-300 font-light leading-relaxed">
+                        Camille commence son parcours musical au piano, avant de trouver sa véritable voie dans la flûte traversière. C’est sa passion pour le jeu en ensemble et la richesse des échanges humains qui l’ont naturellement poussé à se consacrer pleinement à cet instrument. Il occupe actuellement le poste de deuxième flûte et piccolo au sein de l'Orchestre de la Garde républicaine.
+                    </p>
+                </div>
+
+                <!-- Thibaud Rezzouk -->
+                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 space-y-4 shadow-xl">
+                    <div class="border-b border-linaria-border/40 pb-3">
+                        <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Hautbois</span>
+                        <h2 class="font-serif text-2xl font-bold text-white mt-1">Thibaud Rezzouk</h2>
+                    </div>
+                    <p class="text-stone-300 font-light leading-relaxed">
+                        Hautboïste ouvert et curieux, Thibaud Rezzouk aime explorer toute la palette sonore de son instrument, du répertoire baroque aux créations contemporaines qui lui permettent d’exploiter de nombreux modes de jeu. Ses expériences au sein d’institutions telles que l’Orchestre National Auvergne Rhône-Alpe ou l’Ensemble Intercontemporain l’inspirent dans son engagement avec le quintette Linaria.
+                    </p>
+                </div>
+
+                <!-- Nina Reynaud -->
+                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 space-y-4 shadow-xl">
+                    <div class="border-b border-linaria-border/40 pb-3">
+                        <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Clarinette</span>
+                        <h2 class="font-serif text-2xl font-bold text-white mt-1">Nina Reynaud</h2>
+                    </div>
+                    <p class="text-stone-300 font-light leading-relaxed">
+                        Originaire de l’Orléanais, Nina joue ses premières notes de clarinette dans l’orchestre d’harmonie de son village. Quelques années plus tard, c’est donc tout naturellement que lui vient l’envie de rejoindre les rangs de l’orchestre d’harmonie de la Garde républicaine, puis de former un quintette à vent : Linaria. Elle a récemment intégré l’Orchestre de chambre de Paris en tant que clarinette co-soliste.
+                    </p>
+                </div>
+
+                <!-- Zoya Catta -->
+                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 space-y-4 shadow-xl">
+                    <div class="border-b border-linaria-border/40 pb-3">
+                        <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Cor</span>
+                        <h2 class="font-serif text-2xl font-bold text-white mt-1">Zoya Catta</h2>
+                    </div>
+                    <p class="text-stone-300 font-light leading-relaxed">
+                        Zoya découvre le cor à l'âge de 8 ans et déclare qu'elle sera corniste ! Depuis, elle n'a de cesse de se nourrir de toutes les possibilités de son instrument, du baroque à la musique moderne, ainsi que des différentes formations que lui offre sa carrière de corniste. En parallèle de sa vie de chambriste, Zoya se produit régulièrement dans de nombreux orchestres nationaux partout en France.
+                    </p>
+                </div>
+
+                <!-- Raphaëlle Rouxel -->
+                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 space-y-4 shadow-xl">
+                    <div class="border-b border-linaria-border/40 pb-3">
+                        <span class="text-xs uppercase tracking-wider text-linaria-gold font-medium">Basson</span>
+                        <h2 class="font-serif text-2xl font-bold text-white mt-1">Raphaëlle Rouxel</h2>
+                    </div>
+                    <p class="text-stone-300 font-light leading-relaxed">
+                        Raphaëlle découvre la musique à l’âge de 10 ans, après avoir eu un coup de cœur pour le basson. Parallèlement à ses études de basson, elle s’est formée en pédagogie et en musique de chambre avant de rejoindre l’Orchestre National de Lille au poste de contrebasson solo. C’est dans l’équilibre entre l’orchestre, la musique de chambre et l’enseignement qu’elle trouve la richesse de son métier.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-linaria-dark border-t border-linaria-border/40 text-center text-stone-400 text-sm space-y-4">
+        <div class="flex items-center justify-center space-x-6 text-lg">
+            <a href="https://www.youtube.com/@QuintetteLinaria" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition duration-300"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/quintette.linaria/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition duration-300">
+                <i class="fa-brands fa-instagram text-3xl"></i>
+            </a>
+            <a href="https://www.facebook.com/p/Quintette-Linaria-61585351946316/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition-colors"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <p>© 2026 Quintette Linaria. Tous droits réservés. Association Loi 1901.</p>
+    </footer>
+
+    <!-- Script pour le menu mobile -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
