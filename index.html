@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quintette Linaria | Quintette à vent</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Quintette Linaria</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,26 +11,24 @@
                 extend: {
                     colors: {
                         linaria: {
-                            dark: '#042411',      // Vert nuit très profond (fond principal & footer)
-                            card: '#083b1e',      // Vert forêt sombre (cartes & sections alternées)
-                            border: '#115e32',    // Vert subtil pour les bordures
-                            gold: '#d4af37',      // Or élégant (titres, icônes, boutons)
-                            goldLight: '#f3d06b', // Or clair au survol
+                            dark: '#042411',
+                            surface: '#063017',
+                            border: '#134e2b',
+                            gold: '#d4af37',
+                            goldLight: '#ebd07a',
                         }
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts Inter & Playfair Display -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome pour les icones -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #042411;
-            color: #f8fafc;
+            color: #f4f4f0;
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
@@ -40,99 +37,86 @@
 </head>
 <body class="bg-linaria-dark text-stone-100 antialiased selection:bg-linaria-gold selection:text-linaria-dark">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-linaria-dark/85 backdrop-blur-md border-b border-linaria-border/40 transition-all duration-300">
+    <!-- Navigation épurée (sans icône gadget, ligne fine) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-linaria-dark/90 backdrop-blur-md border-b border-linaria-border/50">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-serif text-2xl tracking-wider text-linaria-gold font-bold flex items-center gap-2">
-                <i class="fa-solid fa-dove"></i> Quintette LINARIA
+            <a href="#" class="font-serif text-xl md:text-2xl tracking-widest uppercase text-linaria-gold">
+                Quintette Linaria
             </a>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#about" class="hover:text-linaria-goldLight transition-colors">Le Quintette</a>
-                <a href="biographies.html" class="hover:text-linaria-goldLight transition-colors">Biographies</a>
-                <a href="#programs" class="hover:text-linaria-goldLight transition-colors">Programmes</a>
-                <a href="#media" class="hover:text-linaria-goldLight transition-colors">Médias</a>
-                <a href="#contact" class="px-4 py-2 rounded-full border border-linaria-gold/60 text-linaria-gold hover:bg-linaria-gold hover:text-linaria-dark transition-all">Contact & Diffusion</a>
+            <div class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-[0.15em] text-stone-300">
+                <a href="#about" class="hover:text-linaria-gold transition-colors">Le Quintette</a>
+                <a href="biographies.html" class="hover:text-linaria-gold transition-colors">Biographies</a>
+                <a href="#programs" class="hover:text-linaria-gold transition-colors">Programmes</a>
+                <a href="#media" class="hover:text-linaria-gold transition-colors">Médias</a>
+                <a href="#contact" class="px-5 py-2.5 border border-linaria-gold text-linaria-gold hover:bg-linaria-gold hover:text-linaria-dark transition-all">
+                    Contact
+                </a>
             </div>
-            <!-- Menu Mobile Bouton -->
             <button id="menu-btn" class="md:hidden text-stone-200 focus:outline-none">
-                <i class="fa-solid fa-bars text-2xl"></i>
+                <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
-        <!-- Menu Mobile Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-linaria-card border-b border-linaria-border px-6 py-6 flex flex-col space-y-4">
-            <a href="#about" class="mobile-link hover:text-linaria-goldLight text-lg">Le Quintette</a>
-            <a href="biographies.html" class="mobile-link hover:text-linaria-goldLight text-lg">Biographies</a>
-            <a href="#programs" class="mobile-link hover:text-linaria-goldLight text-lg">Programmes</a>
-            <a href="#media" class="mobile-link hover:text-linaria-goldLight text-lg">Médias</a>
-            <a href="#contact" class="mobile-link text-linaria-gold text-lg font-semibold">Contact & Diffusion</a>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-linaria-surface border-b border-linaria-border px-6 py-8 flex flex-col space-y-5 text-xs uppercase tracking-[0.15em]">
+            <a href="#about" class="mobile-link hover:text-linaria-gold">Le Quintette</a>
+            <a href="biographies.html" class="mobile-link hover:text-linaria-gold">Biographies</a>
+            <a href="#programs" class="mobile-link hover:text-linaria-gold">Programmes</a>
+            <a href="#media" class="mobile-link hover:text-linaria-gold">Médias</a>
+            <a href="#contact" class="mobile-link text-linaria-gold">Contact & Diffusion</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative md:min-h-screen md:bg-[url('photo-assis.JPG')] md:bg-cover md:bg-center flex flex-col justify-center pt-24 pb-16 md:py-20 px-6 overflow-hidden">
-        <!-- Filtre vert nuit (uniquement sur ordinateur où la photo est en fond) -->
-        <div class="hidden md:block absolute inset-0 bg-linaria-dark/75 pointer-events-none"></div>
-        <div class="hidden md:block absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12)_0,transparent_70%)] pointer-events-none"></div>
+    <!-- Hero Section éditoriale (alignée en bas à gauche sur ordinateur, photo entière sur mobile) -->
+    <header class="relative md:min-h-[92vh] md:bg-[url('photo-assis.JPG')] md:bg-cover md:bg-center flex flex-col justify-end pt-24 pb-16 md:pb-20 px-6">
+        <!-- Dégradé naturel vers le bas uniquement sur ordinateur pour laisser voir vos visages -->
+        <div class="hidden md:block absolute inset-0 bg-gradient-to-t from-linaria-dark via-linaria-dark/45 to-linaria-dark/30 pointer-events-none"></div>
 
-        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
-            
-            <!-- Photo complète visible uniquement sur mobile (les 5 musiciens en entier) -->
-            <div class="md:hidden rounded-2xl overflow-hidden border border-linaria-border/50 shadow-2xl mb-4">
+        <div class="relative z-10 max-w-6xl mx-auto w-full">
+            <!-- Photo entière sur mobile -->
+            <div class="md:hidden mb-8 border border-linaria-border/60">
                 <img src="photo-assis.JPG" alt="Quintette Linaria" class="w-full h-auto object-contain">
             </div>
 
-            <span class="inline-block px-4 py-1.5 rounded-full text-xs uppercase tracking-widest bg-linaria-gold/15 text-linaria-goldLight border border-linaria-gold/30 font-medium">
-                Quintette à vent
-            </span>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-tight drop-shadow-lg">
-                Quintette <span class="italic font-normal text-linaria-gold">Linaria</span>
-            </h1>
-            <p class="text-lg md:text-xl text-stone-200 max-w-2xl mx-auto font-light leading-relaxed">
-                La linotte mélodieuse est un petit oiseau vif au chant riche et varié. Charmé·es par son nom évocateur et joyeux, nous lui avons emprunté sa version latine, Linaria.
-            </p>
-            
-            <!-- Bouton Audio -->
-            <div class="pt-2 flex flex-col items-center justify-center">
-                <div onclick="jouerAudio('audio-linotte')" class="relative inline-block cursor-pointer group">
-                    <img src="audio.png" alt="Écouter la Linotte" class="w-16 h-16 drop-shadow-lg group-hover:opacity-75 transition duration-300">
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <i class="fa-solid fa-circle-play text-white text-5xl opacity-80 drop-shadow-md"></i>
-                    </div>
-                </div>
-                <audio id="audio-linotte" src="linotte-melodieuse.mp3"></audio>
-            </div>
+            <div class="max-w-2xl space-y-6">
+                <p class="text-xs uppercase tracking-[0.25em] text-linaria-gold">
+                    Quintette à vent — Paris
+                </p>
+                <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-normal text-white leading-[1.1]">
+                    Quintette <span class="italic text-linaria-gold">Linaria</span>
+                </h1>
+                <p class="text-base md:text-lg text-stone-200 font-light leading-relaxed">
+                    La linotte mélodieuse est un petit oiseau vif au chant riche et varié. Charmé·es par son nom évocateur et joyeux, nous lui avons emprunté sa version latine, Linaria.
+                </p>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="#programs" class="w-full sm:w-auto px-8 py-4 rounded-full bg-linaria-gold text-linaria-dark font-semibold hover:bg-linaria-goldLight transition-all shadow-lg shadow-black/30">
-                    Découvrir nos programmes
-                </a>
-                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full border border-linaria-gold/50 text-stone-100 hover:bg-linaria-card/80 transition-all">
-                    Espace Programmateur
-                </a>
+                <!-- Lecteur audio discret façon cartel d'exposition -->
+                <div class="pt-2 flex flex-wrap items-center gap-6">
+                    <button onclick="jouerAudio('audio-linotte')" class="inline-flex items-center gap-3 pr-5 py-2 border border-linaria-gold/40 bg-linaria-dark/60 hover:border-linaria-gold transition-colors group">
+                        <img src="audio.png" alt="Écouter la Linotte" class="w-10 h-10 object-contain pl-2">
+                        <span class="text-xs uppercase tracking-[0.15em] text-stone-200 group-hover:text-linaria-gold transition-colors">
+                            Écouter l'oiseau
+                        </span>
+                    </button>
+                    <audio id="audio-linotte" src="linotte-melodieuse.mp3"></audio>
+
+                    <a href="#programs" class="text-xs uppercase tracking-[0.15em] text-linaria-gold border-b border-linaria-gold pb-1 hover:text-linaria-goldLight hover:border-linaria-goldLight transition-colors">
+                        Découvrir les programmes
+                    </a>
+                </div>
             </div>
-        </div>
-        <!-- Indicateur de défilement -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-linaria-gold/70">
-            <i class="fa-solid fa-chevron-down text-sm"></i>
         </div>
     </header>
 
-    <!-- Nouvelle section avec image de fond -->
-    <section class="relative bg-[url('mosaique.jpg')] bg-cover bg-center bg-fixed py-24 border-y border-linaria-border/30">
-        <div class="absolute inset-0 bg-linaria-dark/70"></div>
-    </section>
-
-    <!-- Section: Présentation & Biographies -->
-    <section id="about" class="py-28 px-6 bg-linaria-dark border-t border-linaria-border/30">
-        <div class="max-w-6xl mx-auto space-y-20">
+    <!-- Section: Présentation & Effectif (mise en page asymétrique 2 colonnes) -->
+    <section id="about" class="py-24 px-6 border-t border-linaria-border/40">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             
-            <!-- Présentation du Quintette -->
-            <div class="max-w-3xl mx-auto space-y-6 text-center md:text-left">
-                <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold block text-center">Présentation</span>
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white leading-tight text-center">
+            <!-- Colonne de gauche : Texte de présentation (7 colonnes) -->
+            <div class="lg:col-span-7 space-y-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-linaria-gold">Présentation</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-normal text-white">
                     Le Quintette Linaria
                 </h2>
-                <div class="space-y-5 text-stone-300 leading-relaxed font-light pt-4">
+                <div class="space-y-5 text-stone-300 font-light leading-relaxed pt-2">
                     <p>
                         La linotte mélodieuse est un petit oiseau vif au chant riche et varié. Charmé·es par son nom évocateur et joyeux, nous lui avons emprunté sa version latine, Linaria.
                     </p>
@@ -148,194 +132,182 @@
                 </div>
             </div>
 
-            <!-- Biographies des membres -->
-            <!-- Résumé compact des membres + Lien vers la page Biographies -->
-            <div class="pt-8 border-t border-linaria-border/40 flex flex-col items-center text-center space-y-8">
-                <div class="space-y-2">
-                    <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Les instrumentistes</span>
-                    <h3 class="font-serif text-2xl md:text-3xl font-bold text-white">Les membres du quintette</h3>
+            <!-- Colonne de droite : Distribution façon programme de concert (5 colonnes) -->
+            <div class="lg:col-span-5 lg:border-l lg:border-linaria-border/40 lg:pl-12 flex flex-col justify-between space-y-8">
+                <div class="space-y-6">
+                    <p class="text-xs uppercase tracking-[0.2em] text-linaria-gold">Distribution</p>
+                    <dl class="divide-y divide-linaria-border/40 border-y border-linaria-border/40 text-sm">
+                        <div class="py-3.5 flex justify-between">
+                            <dt class="text-stone-400 font-light">Flûte</dt>
+                            <dd class="text-stone-100 font-normal">Camille Dupont-Bouyer</dd>
+                        </div>
+                        <div class="py-3.5 flex justify-between">
+                            <dt class="text-stone-400 font-light">Hautbois</dt>
+                            <dd class="text-stone-100 font-normal">Thibaud Rezzouk</dd>
+                        </div>
+                        <div class="py-3.5 flex justify-between">
+                            <dt class="text-stone-400 font-light">Clarinette</dt>
+                            <dd class="text-stone-100 font-normal">Nina Reynaud</dd>
+                        </div>
+                        <div class="py-3.5 flex justify-between">
+                            <dt class="text-stone-400 font-light">Cor</dt>
+                            <dd class="text-stone-100 font-normal">Zoya Catta</dd>
+                        </div>
+                        <div class="py-3.5 flex justify-between">
+                            <dt class="text-stone-400 font-light">Basson</dt>
+                            <dd class="text-stone-100 font-normal">Raphaëlle Rouxel</dd>
+                        </div>
+                    </dl>
                 </div>
 
-                <div class="flex flex-wrap justify-center gap-4 text-sm">
-                    <span class="px-4 py-2 rounded-full bg-linaria-card border border-linaria-border/50 text-stone-200">
-                        <strong class="text-linaria-gold font-medium">Flûte :</strong> Camille Dupont-Bouyer
-                    </span>
-                    <span class="px-4 py-2 rounded-full bg-linaria-card border border-linaria-border/50 text-stone-200">
-                        <strong class="text-linaria-gold font-medium">Hautbois :</strong> Thibaud Rezzouk
-                    </span>
-                    <span class="px-4 py-2 rounded-full bg-linaria-card border border-linaria-border/50 text-stone-200">
-                        <strong class="text-linaria-gold font-medium">Clarinette :</strong> Nina Reynaud
-                    </span>
-                    <span class="px-4 py-2 rounded-full bg-linaria-card border border-linaria-border/50 text-stone-200">
-                        <strong class="text-linaria-gold font-medium">Cor :</strong> Zoya Catta
-                    </span>
-                    <span class="px-4 py-2 rounded-full bg-linaria-card border border-linaria-border/50 text-stone-200">
-                        <strong class="text-linaria-gold font-medium">Basson :</strong> Raphaëlle Rouxel
-                    </span>
+                <div>
+                    <a href="biographies.html" class="inline-block w-full text-center px-6 py-3.5 border border-linaria-gold/60 text-xs uppercase tracking-[0.15em] text-linaria-gold hover:bg-linaria-gold hover:text-linaria-dark transition-all">
+                        Lire les biographies
+                    </a>
                 </div>
-
-                <a href="biographies.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-linaria-gold/60 text-linaria-gold hover:bg-linaria-gold hover:text-linaria-dark font-medium transition-all">
-                    Lire les biographies complètes <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
             </div>
 
-    <!-- Section: Programmes de Concert -->
-    <section id="programs" class="py-28 px-6 bg-linaria-card/40 border-t border-linaria-border/30">
-        <div class="max-w-5xl mx-auto space-y-16">
-            <div class="text-center max-w-2xl mx-auto space-y-4">
-                <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Durée : 1h environ</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Programmes</h2>
+        </div>
+    </section>
+
+    <!-- Interlude visuel Mosaïque -->
+    <section class="relative bg-[url('mosaique.jpg')] bg-cover bg-center bg-fixed h-72 border-y border-linaria-border/40">
+        <div class="absolute inset-0 bg-linaria-dark/55"></div>
+    </section>
+
+    <!-- Section: Programmes (Présentation éditoriale à filets fins, sans grosses boîtes) -->
+    <section id="programs" class="py-24 px-6 bg-linaria-surface/40">
+        <div class="max-w-6xl mx-auto space-y-16">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-linaria-border/50 pb-6 gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-linaria-gold mb-2">Répertoire</p>
+                    <h2 class="font-serif text-3xl md:text-4xl font-normal text-white">Programmes</h2>
+                </div>
+                <p class="text-xs uppercase tracking-[0.15em] text-stone-400">
+                    Durée : 1h environ
+                </p>
             </div>
 
-            <!-- Grille des Programmes -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Grille aérée avec filets supérieurs -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
                 
-                <!-- Programme 1 : À la loupe -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-linaria-gold/15 text-linaria-goldLight">De Marais à Messiaen</span>
-                            <i class="fa-solid fa-magnifying-glass text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">À la loupe</h3>
-                        <p class="text-stone-300 text-sm font-light leading-relaxed">
-                            Alternance de pièces solo et en quintette.
+                <!-- Programme 1 -->
+                <article class="border-t border-linaria-gold/50 pt-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl text-white">À la loupe</h3>
+                        <p class="text-xs uppercase tracking-wider text-linaria-gold">De Marais à Messiaen</p>
+                        <p class="text-sm text-stone-300 font-light">Alternance de pièces solo et en quintette.</p>
+                        <p class="text-sm text-stone-200 font-light pt-2 leading-relaxed">
+                            Marais, Bach, Ibert, Carrapatoso, Messiaen, Berio et Sciarrino
                         </p>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-sm text-stone-200 font-light">
-                            <p>Marais, Bach, Ibert, Carrapatoso, Messiaen, Berio et Sciarrino</p>
-                        </div>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
+                    <a href="#contact" class="text-xs uppercase tracking-[0.15em] text-stone-400 hover:text-linaria-gold transition-colors">
+                        Demander le programme →
+                    </a>
+                </article>
 
-                <!-- Programme 2 : Bagatelles -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <i class="fa-solid fa-music text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">Bagatelles</h3>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">LIGETI</strong>, 6 Bagatelles</p>
-                            <p><strong class="text-white">ARNOLD</strong>, Three Shanties</p>
-                            <p><strong class="text-white">HINDEMITH</strong>, Kleine Kammermusik</p>
-                            <p><strong class="text-white">CARRAPATOSO</strong>, Cinco Elegias</p>
-                            <p><strong class="text-white">SAY</strong>, Alevi dedeler rakı masasında</p>
-                        </div>
+                <!-- Programme 2 -->
+                <article class="border-t border-linaria-gold/50 pt-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl text-white">Bagatelles</h3>
+                        <ul class="space-y-1.5 text-sm text-stone-300 font-light pt-2">
+                            <li><span class="text-white font-normal">LIGETI</span>, 6 Bagatelles</li>
+                            <li><span class="text-white font-normal">ARNOLD</span>, Three Shanties</li>
+                            <li><span class="text-white font-normal">HINDEMITH</span>, Kleine Kammermusik</li>
+                            <li><span class="text-white font-normal">CARRAPATOSO</span>, Cinco Elegias</li>
+                            <li><span class="text-white font-normal">SAY</span>, Alevi dedeler rakı masasında</li>
+                        </ul>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Programme 3 : Mises en lumière -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <i class="fa-solid fa-music text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">Mises en lumière</h3>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">COLEMAN</strong>, Umoja</p>
-                            <p><strong class="text-white">BACEWICZ</strong>, Quintette à vents</p>
-                            <p><strong class="text-white">COLEMAN</strong>, Tzigane</p>
-                            <p><strong class="text-white">KOTRONIA</strong>, Grönare än</p>
-                            <p><strong class="text-white">CRAWFORD SEEGER</strong>, Suite</p>
-                        </div>
-                    </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
+                    <a href="#contact" class="text-xs uppercase tracking-[0.15em] text-stone-400 hover:text-linaria-gold transition-colors">
+                        Demander le programme →
+                    </a>
+                </article>
 
-                <!-- Programme 4 : Tour de France -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <i class="fa-solid fa-music text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">Tour de France</h3>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">ONSLOW</strong>, Quintette op.81</p>
-                            <p><strong class="text-white">FRANÇAIX</strong>, Quintette n°1</p>
-                            <p><strong class="text-white">IBERT</strong>, Trois Pièces Brèves</p>
-                            <p><strong class="text-white">RAVEL</strong>, Tombeau de Couperin pour quintette à vents</p>
-                        </div>
+                <!-- Programme 3 -->
+                <article class="border-t border-linaria-gold/50 pt-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl text-white">Mises en lumière</h3>
+                        <ul class="space-y-1.5 text-sm text-stone-300 font-light pt-2">
+                            <li><span class="text-white font-normal">COLEMAN</span>, Umoja</li>
+                            <li><span class="text-white font-normal">BACEWICZ</span>, Quintette à vents</li>
+                            <li><span class="text-white font-normal">COLEMAN</span>, Tzigane</li>
+                            <li><span class="text-white font-normal">KOTRONIA</span>, Grönare än</li>
+                            <li><span class="text-white font-normal">CRAWFORD SEEGER</span>, Suite</li>
+                        </ul>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
+                    <a href="#contact" class="text-xs uppercase tracking-[0.15em] text-stone-400 hover:text-linaria-gold transition-colors">
+                        Demander le programme →
+                    </a>
+                </article>
 
-                <!-- Programme 5 : Souvenirs américains -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <i class="fa-solid fa-music text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">Souvenirs américains</h3>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">BARBER</strong>, Summer Music</p>
-                            <p><strong class="text-white">DVORAK</strong>, Quatuor Américain</p>
-                            <p><strong class="text-white">COLEMAN</strong>, Tzigane</p>
-                            <p><strong class="text-white">VILLA-LOBOS</strong>, Quintette en forme de chôros</p>
-                        </div>
+                <!-- Programme 4 -->
+                <article class="border-t border-linaria-gold/50 pt-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl text-white">Tour de France</h3>
+                        <ul class="space-y-1.5 text-sm text-stone-300 font-light pt-2">
+                            <li><span class="text-white font-normal">ONSLOW</span>, Quintette op.81</li>
+                            <li><span class="text-white font-normal">FRANÇAIX</span>, Quintette n°1</li>
+                            <li><span class="text-white font-normal">IBERT</span>, Trois Pièces Brèves</li>
+                            <li><span class="text-white font-normal">RAVEL</span>, Tombeau de Couperin pour quintette à vents</li>
+                        </ul>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
+                    <a href="#contact" class="text-xs uppercase tracking-[0.15em] text-stone-400 hover:text-linaria-gold transition-colors">
+                        Demander le programme →
+                    </a>
+                </article>
 
-                <!-- Programme 6 : Vents d'Europe -->
-                <div class="bg-linaria-card border border-linaria-border/50 rounded-2xl p-8 hover:border-linaria-gold/60 transition-all flex flex-col justify-between shadow-xl group">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <i class="fa-solid fa-music text-linaria-gold/50 group-hover:text-linaria-gold transition-colors"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-white">Vents d'Europe</h3>
-                        <div class="pt-4 border-t border-linaria-border/40 space-y-2 text-xs text-stone-300 font-mono">
-                            <p><strong class="text-white">ARNOLD</strong>, Three Shanties</p>
-                            <p><strong class="text-white">HINDEMITH</strong>, Kleine Kammermusik</p>
-                            <p><strong class="text-white">SCIARRINO</strong>, Il silenzio degli oracoli</p>
-                            <p><strong class="text-white">IBERT</strong>, Trois Pièces Brèves</p>
-                            <p><strong class="text-white">BACEWICZ</strong>, Quintette à vents</p>
-                            <p><strong class="text-white">COLEMAN</strong>, Tzigane</p>
-                        </div>
+                <!-- Programme 5 -->
+                <article class="border-t border-linaria-gold/50 pt-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl text-white">Souvenirs américains</h3>
+                        <ul class="space-y-1.5 text-sm text-stone-300 font-light pt-2">
+                            <li><span class="text-white font-normal">BARBER</span>, Summer Music</li>
+                            <li><span class="text-white font-normal">DVORAK</span>, Quatuor Américain</li>
+                            <li><span class="text-white font-normal">COLEMAN</span>, Tzigane</li>
+                            <li><span class="text-white font-normal">VILLA-LOBOS</span>, Quintette en forme de chôros</li>
+                        </ul>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-linaria-border/40 flex items-center justify-end">
-                        <a href="#contact" class="text-linaria-gold hover:text-linaria-goldLight text-sm font-medium flex items-center gap-1">
-                            Demander la fiche <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
+                    <a href="#contact" class="text-xs uppercase tracking-[0.15em] text-stone-400 hover:text-linaria-gold transition-colors">
+                        Demander le programme →
+                    </a>
+                </article>
+
+                <!-- Programme 6 -->
+                <article class="border-t border-linaria-gold/50 pt-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <h3 class="font-serif text-2xl text-white">Vents d'Europe</h3>
+                        <ul class="space-y-1.5 text-sm text-stone-300 font-light pt-2">
+                            <li><span class="text-white font-normal">ARNOLD</span>, Three Shanties</li>
+                            <li><span class="text-white font-normal">HINDEMITH</span>, Kleine Kammermusik</li>
+                            <li><span class="text-white font-normal">SCIARRINO</span>, Il silenzio degli oracoli</li>
+                            <li><span class="text-white font-normal">IBERT</span>, Trois Pièces Brèves</li>
+                            <li><span class="text-white font-normal">BACEWICZ</span>, Quintette à vents</li>
+                            <li><span class="text-white font-normal">COLEMAN</span>, Tzigane</li>
+                        </ul>
                     </div>
-                </div>
+                    <a href="#contact" class="text-xs uppercase tracking-[0.15em] text-stone-400 hover:text-linaria-gold transition-colors">
+                        Demander le programme →
+                    </a>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- Section: Médias & Teaser Vidéo -->
-    <section id="media" class="py-28 px-6 bg-linaria-dark border-t border-linaria-border/30">
-        <div class="max-w-4xl mx-auto space-y-12 text-center">
-            <div class="space-y-4">
-                <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">En concert</span>
-                <h2 class="font-serif text-4xl font-bold text-white">Teaser & Extraits</h2>
-                <p class="text-stone-300 font-light max-w-xl mx-auto">
-                    Découvrez un aperçu de l'univers sonore du Quintette Linaria
+    <!-- Section: Médias -->
+    <section id="media" class="py-24 px-6 border-t border-linaria-border/40">
+        <div class="max-w-5xl mx-auto space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-linaria-gold mb-2">En concert</p>
+                    <h2 class="font-serif text-3xl md:text-4xl font-normal text-white">Teaser & Extraits</h2>
+                </div>
+                <p class="text-sm text-stone-400 font-light">
+                    Dossier de diffusion complet disponible sur demande.
                 </p>
             </div>
             
-            <!-- Conteneur Vidéo Responsive (Intégration YouTube) -->
-            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-linaria-border/50 bg-linaria-card">
+            <div class="relative w-full aspect-video border border-linaria-border/60 bg-linaria-surface">
                 <iframe 
                     class="w-full h-full" 
                     src="https://www.youtube.com/embed/U0hFYyibEic?si=IKFHS4v_ZU_K9sNl" 
@@ -345,59 +317,51 @@
                     allowfullscreen>
                 </iframe>
             </div>
-            
-            <div class="text-sm text-stone-400 italic">
-                Dossier de diffusion complet (plaquette PDF et fiches techniques) disponible sur demande pour les programmateurs.
-            </div>
         </div>
     </section>
 
-    <!-- Section: Contact & Diffusion -->
-    <section id="contact" class="py-28 px-6 bg-linaria-card/40 border-t border-linaria-border/30">
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="space-y-6">
-                <span class="text-xs uppercase tracking-widest text-linaria-gold font-semibold">Booking & Relations</span>
-                <h2 class="font-serif text-4xl font-bold text-white">Contactez-nous</h2>
-                <p class="text-stone-300 font-light leading-relaxed">
-                    Vous êtes programmateur, directeur de festival ou curieux de découvrir nos projets ? N'hésitez pas à nous écrire pour recevoir notre plaquette artistique et nos disponibilités pour la saison.
+    <!-- Section: Contact -->
+    <section id="contact" class="py-24 px-6 bg-linaria-surface/40 border-t border-linaria-border/40">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div class="space-y-4">
+                <p class="text-xs uppercase tracking-[0.2em] text-linaria-gold">Diffusion</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-normal text-white">Contact</h2>
+                <p class="text-stone-300 font-light leading-relaxed max-w-md">
+                    Vous êtes programmateur, directeur de festival ou curieux de découvrir nos projets ? N'hésitez pas à nous écrire pour recevoir notre plaquette artistique et nos disponibilités.
                 </p>
-                <div class="space-y-4 pt-2 text-stone-200">
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-linaria-card border border-linaria-border/60 flex items-center justify-center text-linaria-gold">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <span>quintette.linaria@gmail.com</span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-linaria-card border border-linaria-border/60 flex items-center justify-center text-linaria-gold">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <span>+33 (0)6 XX XX XX XX</span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-linaria-card border border-linaria-border/60 flex items-center justify-center text-linaria-gold">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <span>Paris, France</span>
-                    </div>
+            </div>
+
+            <div class="space-y-4 text-sm text-stone-200 border-t md:border-t-0 md:border-l border-linaria-border/40 pt-6 md:pt-0 md:pl-12">
+                <div>
+                    <span class="block text-xs uppercase tracking-[0.15em] text-stone-400 mb-1">Courriel</span>
+                    <a href="mailto:quintette.linaria@gmail.com" class="text-lg font-serif text-linaria-gold hover:text-linaria-goldLight transition-colors">
+                        quintette.linaria@gmail.com
+                    </a>
+                </div>
+                <div>
+                    <span class="block text-xs uppercase tracking-[0.15em] text-stone-400 mb-1">Téléphone</span>
+                    <span>+33 (0)6 XX XX XX XX</span>
+                </div>
+                <div>
+                    <span class="block text-xs uppercase tracking-[0.15em] text-stone-400 mb-1">Résidence</span>
+                    <span>Paris, France</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 bg-linaria-dark border-t border-linaria-border/40 text-center text-stone-400 text-sm space-y-4">
-        <div class="flex items-center justify-center space-x-6 text-lg">
-            <a href="https://www.youtube.com/@QuintetteLinaria" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition duration-300"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.instagram.com/quintette.linaria/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition duration-300">
-                <i class="fa-brands fa-instagram text-3xl"></i>
-            </a>
-            <a href="https://www.facebook.com/p/Quintette-Linaria-61585351946316/" target="_blank" rel="noopener noreferrer" class="text-stone-200 hover:text-linaria-gold transition-colors"><i class="fa-brands fa-facebook"></i></a>
+    <footer class="py-12 px-6 border-t border-linaria-border/40 text-stone-400 text-xs">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <p>© 2026 Quintette Linaria — Association Loi 1901</p>
+            <div class="flex items-center space-x-8 text-base text-stone-300">
+                <a href="https://www.youtube.com/@QuintetteLinaria" target="_blank" rel="noopener noreferrer" class="hover:text-linaria-gold transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/quintette.linaria/" target="_blank" rel="noopener noreferrer" class="hover:text-linaria-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/p/Quintette-Linaria-61585351946316/" target="_blank" rel="noopener noreferrer" class="hover:text-linaria-gold transition-colors"><i class="fa-brands fa-facebook"></i></a>
+            </div>
         </div>
-        <p>© 2026 Quintette Linaria. Crédit Photo Romain Robine. Association Loi 1901 Les amis de la Linotte.</p>
     </footer>
 
-    <!-- Script pour le menu mobile et l'audio -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
